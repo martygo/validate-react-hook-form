@@ -19,15 +19,12 @@ function App() {
 							Name
 						</label>
 						<input
-							{...register("name", { required: "true" })}
-							aria-invalid={errors.name ? "true" : "false"}
+							{...register("name", { required: "Name is required." })}
 							type="text"
 							className="form-control"
 							id="inputName"
 						/>
-						{errors.name?.type === "required" ? (
-							<p className="text-danger">Name is required</p>
-						) : null}
+						<p className="text-danger">{errors.name?.message}</p>
 					</div>
 
 					<div className="mb-3 position-relative">
@@ -35,17 +32,18 @@ function App() {
 							Email
 						</label>
 						<input
-							{...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+							{...register("email", {
+								required: "Email is required.",
+								pattern: {
+									value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+									message: "Invalid email address.",
+								},
+							})}
 							type="email"
 							className="form-control"
 							id="inputEmail"
 						/>
-						{errors.email?.type === "required" ? (
-							<p className="text-danger">Email is required</p>
-						) : null}
-						{errors.email?.type === "pattern" ? (
-							<p className="text-danger">Email invalid</p>
-						) : null}
+						<p className="text-danger">{errors.email?.message}</p>
 					</div>
 
 					<div className="mb-3 position-relative">
@@ -53,19 +51,18 @@ function App() {
 							Password
 						</label>
 						<input
-							{...register("password", { required: true, minLength: 8 })}
+							{...register("password", {
+								required: "Password is required",
+								minLength: {
+									value: 8,
+									message: "Password must be at least 8 characters.",
+								},
+							})}
 							type="password"
 							className="form-control"
 							id="inputPassword"
 						/>
-						{errors.password?.type === "required" ? (
-							<p className="text-danger">Password is required</p>
-						) : null}
-						{errors.password?.type === "minLength" ? (
-							<p className="text-danger">
-								Password required on min 8 characters
-							</p>
-						) : null}
+						<p className="text-danger">{errors.password?.message}</p>
 					</div>
 
 					<div className="d-grid">
