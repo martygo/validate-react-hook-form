@@ -1,0 +1,5 @@
+.invalid,
+.invalid:focus {
+    border-color: var(--bs-danger);
+    box-shadow: 0 0 0 .25rem rgba(208, 13, 13, 0.25);
+}

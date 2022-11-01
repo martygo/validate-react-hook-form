@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import "./utils.css";
+
 function App() {
 	const {
 		register,
@@ -14,20 +16,20 @@ function App() {
 		<div className="container">
 			<div className="d-flex justify-content-center mt-4">
 				<form className="col-md-6" onSubmit={handleSubmit(onSubmit)}>
-					<div className="mb-3 position-relative">
+					<div className="mb-3">
 						<label htmlFor="inputName" className="form-label">
 							Name
 						</label>
 						<input
 							{...register("name", { required: "Name is required." })}
+							className={`form-control ${errors.name ? "invalid" : null}`}
 							type="text"
-							className="form-control"
 							id="inputName"
 						/>
 						<p className="text-danger">{errors.name?.message}</p>
 					</div>
 
-					<div className="mb-3 position-relative">
+					<div className="mb-3">
 						<label htmlFor="inputEmail" className="form-label">
 							Email
 						</label>
@@ -39,14 +41,14 @@ function App() {
 									message: "Invalid email address.",
 								},
 							})}
+							className={`form-control ${errors.email ? "invalid" : null}`}
 							type="email"
-							className="form-control"
 							id="inputEmail"
 						/>
 						<p className="text-danger">{errors.email?.message}</p>
 					</div>
 
-					<div className="mb-3 position-relative">
+					<div className="mb-3">
 						<label htmlFor="inputPassword" className="form-label">
 							Password
 						</label>
@@ -58,8 +60,8 @@ function App() {
 									message: "Password must be at least 8 characters.",
 								},
 							})}
+							className={`form-control ${errors.password ? "invalid" : null}`}
 							type="password"
-							className="form-control"
 							id="inputPassword"
 						/>
 						<p className="text-danger">{errors.password?.message}</p>
