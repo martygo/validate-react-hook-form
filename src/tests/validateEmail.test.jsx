@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { validateEmail } from "../utils/validateEmail";
 
-describe("test utils functions", () => {
+describe("Email", () => {
     it("should be return true", () => {
         const email = "john@gmail.com";
         expect(validateEmail(email)).toBe(true);
