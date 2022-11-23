@@ -23,6 +23,7 @@
 			"react/jsx-props-no-spreading": "off",
             "react/jsx-indent": ["error", 4, { "checkAttributes": true, "indentLogicalExpressions": true }],
             "react/jsx-indent-props": ["error", 4],
+            "import/prefer-default-export": "off",
 			"indent": ["error", 4],
 			"linebreak-style": ["error", "unix"],
 			"quotes": ["error", "double"],
