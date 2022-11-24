@@ -20,7 +20,7 @@ function App() {
                         <label htmlFor="inputName" className="form-label col-md-12">
                             Nome
                             <input
-                                {...register("name", { required: "Name is required." })}
+                                {...register("name", { required: "Name is required" })}
                                 className={`form-control ${errors.name ? "invalid" : null}`}
                                 type="text"
                                 id="inputName"
@@ -34,10 +34,10 @@ function App() {
                             Email
                             <input
                                 {...register("email", {
-                                    required: "Email is required.",
+                                    required: "Email is required",
                                     pattern: {
                                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        message: "Invalid email address.",
+                                        message: "Invalid email address",
                                     },
                                 })}
                                 className={`col-md-6 form-control ${
@@ -58,7 +58,7 @@ function App() {
                                     required: "Password is required",
                                     minLength: {
                                         value: 8,
-                                        message: "Password must be at least 8 characters.",
+                                        message: "Password must be at least 8 characters",
                                     },
                                 })}
                                 className={`form-control ${

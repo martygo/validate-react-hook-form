@@ -7,6 +7,8 @@
 		"dev": "vite",
 		"build": "vite build",
 		"test": "vitest",
+		"cv": "vitest run --coverage",
+		"lint": "eslint",
 		"preview": "vite preview"
 	},
 	"dependencies": {
@@ -22,6 +24,8 @@
 		"@types/react": "^18.0.22",
 		"@types/react-dom": "^18.0.7",
 		"@vitejs/plugin-react": "^2.2.0",
+		"@vitest/coverage-c8": "^0.25.3",
+		"@vitest/ui": "^0.25.3",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-plugin-import": "^2.25.3",
 		"eslint-plugin-jsx-a11y": "^6.5.1",
