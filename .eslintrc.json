@@ -30,6 +30,7 @@
 			"quotes": ["error", "double"],
 			"semi": ["error", "always"],
 			"no-empty": "warn",
+            "no-undef": "off",
 			"no-cond-assign": ["error", "always"]
 		}
 }
