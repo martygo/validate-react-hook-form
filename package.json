@@ -7,7 +7,7 @@
 		"dev": "vite",
 		"build": "vite build",
 		"test": "vitest",
-		"cp": "cypress open --browser firefox",
+		"cy": "cypress open --browser firefox",
 		"cv": "vitest run --coverage",
 		"lint": "eslint",
 		"preview": "vite preview"
@@ -20,6 +20,7 @@
 		"vitest": "^0.25.3"
 	},
 	"devDependencies": {
+		"@cypress/code-coverage": "^3.10.0",
 		"@testing-library/cypress": "^8.0.7",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
