@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import "./utils.css";
@@ -10,12 +10,17 @@ function App() {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const onSubmit = () => setIsSubmitted(!isSubmitted);
 
     return (
         <div className="container">
             <div className="d-flex justify-content-center mt-4">
                 <form className="col-md-6" onSubmit={handleSubmit(onSubmit)}>
+                    <div className={`alert alert-primary ${!isSubmitted ? "d-none" : ""}`} role="alert">
+                        All right!
+                    </div>
                     <div className="mb-3">
                         <label htmlFor="inputName" className="form-label col-md-12">
                             Nome
